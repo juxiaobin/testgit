@@ -1,0 +1,993 @@
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:17] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(256) | Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:18] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(182) | Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@588e2e94, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5e9423f7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4fc55da3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2686a13f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@50c442db]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:18] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:18] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:18] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing org.springframework.context.support.GenericApplicationContext@53354a57: startup date [Fri Apr 28 16:01:18 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:18] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [config.properties]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:18] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:19] com.alibaba.druid.pool.DruidDataSource.init(669) | {dataSource-1} inited
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:19] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(66) | HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:19] org.hibernate.Version.logVersion(54) | HHH000412: Hibernate Core {4.3.8.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:19] org.hibernate.cfg.Environment.<clinit>(239) | HHH000206: hibernate.properties not found
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:19] org.hibernate.cfg.Environment.buildBytecodeProvider(346) | HHH000021: Bytecode provider name : javassist
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:20] org.hibernate.dialect.Dialect.<init>(145) | HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:21] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(62) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:21] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(47) | HHH000397: Using ASTQueryTranslatorFactory
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:21] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(207) | HHH000228: Running hbm2ddl schema update
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:21] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(218) | HHH000102: Fetching database metadata
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:21] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(230) | HHH000396: Updating schema
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:21] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(267) | HHH000232: Schema update complete
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:21] org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(360) | Using DataSource [{
+	CreateTime:"2017-04-28 16:01:19",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1856403093, ConnectTime:"2017-04-28 16:01:20", UseCount:2, LastActiveTime:"2017-04-28 16:01:21"}
+	]
+}
+
+[
+	{
+	ID:1856403093, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+[spring_struts2_Hibernate_demo][ERROR] [2017-04-28 16:01:22] org.springframework.test.context.TestContextManager.prepareTestInstance(215) | Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5e9423f7] to prepare test instance [com.mssh2.service.TestUserService@69ee5565]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.mssh2.service.TestUserService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.mssh2.service.UserInfoService com.mssh2.service.TestUserService.userInfoService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.mssh2.service.UserInfoService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:385)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.mssh2.service.UserInfoService com.mssh2.service.TestUserService.userInfoService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.mssh2.service.UserInfoService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.mssh2.service.UserInfoService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1308)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1054)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 28 more
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:22] org.springframework.context.support.AbstractApplicationContext.doClose(862) | Closing org.springframework.context.support.GenericApplicationContext@53354a57: startup date [Fri Apr 28 16:01:18 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:01:22] com.alibaba.druid.pool.DruidDataSource.close(1385) | {dataSource-1} closed
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:27] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(256) | Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:27] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(182) | Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2ca7887e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2af21f19, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7dd7b855, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5d8714fe, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4f735faa]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:27] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:27] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:27] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing org.springframework.context.support.GenericApplicationContext@255d8ff: startup date [Fri Apr 28 16:05:27 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:28] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [config.properties]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:28] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:28] com.alibaba.druid.pool.DruidDataSource.init(669) | {dataSource-1} inited
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:29] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(66) | HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:29] org.hibernate.Version.logVersion(54) | HHH000412: Hibernate Core {4.3.8.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:29] org.hibernate.cfg.Environment.<clinit>(239) | HHH000206: hibernate.properties not found
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:29] org.hibernate.cfg.Environment.buildBytecodeProvider(346) | HHH000021: Bytecode provider name : javassist
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:29] org.hibernate.dialect.Dialect.<init>(145) | HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:29] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(62) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:29] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(47) | HHH000397: Using ASTQueryTranslatorFactory
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(207) | HHH000228: Running hbm2ddl schema update
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(218) | HHH000102: Fetching database metadata
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(230) | HHH000396: Updating schema
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(267) | HHH000232: Schema update complete
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:30] org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(360) | Using DataSource [{
+	CreateTime:"2017-04-28 16:05:28",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1839091544, ConnectTime:"2017-04-28 16:05:29", UseCount:2, LastActiveTime:"2017-04-28 16:05:30"}
+	]
+}
+
+[
+	{
+	ID:1839091544, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+[spring_struts2_Hibernate_demo][ERROR] [2017-04-28 16:05:30] org.springframework.test.context.TestContextManager.prepareTestInstance(215) | Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2af21f19] to prepare test instance [com.mssh2.service.TestUserService@132c0adc]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.mssh2.service.TestUserService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.mssh2.service.UserInfoService com.mssh2.service.TestUserService.userInfoService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.mssh2.service.UserInfoService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:385)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.mssh2.service.UserInfoService com.mssh2.service.TestUserService.userInfoService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.mssh2.service.UserInfoService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 26 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.mssh2.service.UserInfoService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1308)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1054)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 28 more
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:30] org.springframework.context.support.AbstractApplicationContext.doClose(862) | Closing org.springframework.context.support.GenericApplicationContext@255d8ff: startup date [Fri Apr 28 16:05:27 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:05:30] com.alibaba.druid.pool.DruidDataSource.close(1385) | {dataSource-1} closed
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:43] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(256) | Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:43] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(182) | Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@588e2e94, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5e9423f7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4fc55da3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2686a13f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@50c442db]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:43] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:43] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:43] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing org.springframework.context.support.GenericApplicationContext@53354a57: startup date [Fri Apr 28 16:12:43 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:43] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [config.properties]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:43] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:44] com.alibaba.druid.pool.DruidDataSource.init(669) | {dataSource-1} inited
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:44] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(66) | HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:44] org.hibernate.Version.logVersion(54) | HHH000412: Hibernate Core {4.3.8.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:44] org.hibernate.cfg.Environment.<clinit>(239) | HHH000206: hibernate.properties not found
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:44] org.hibernate.cfg.Environment.buildBytecodeProvider(346) | HHH000021: Bytecode provider name : javassist
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:45] org.hibernate.dialect.Dialect.<init>(145) | HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:45] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(62) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:45] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(47) | HHH000397: Using ASTQueryTranslatorFactory
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:45] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(207) | HHH000228: Running hbm2ddl schema update
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:45] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(218) | HHH000102: Fetching database metadata
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:45] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(230) | HHH000396: Updating schema
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:45] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(267) | HHH000232: Schema update complete
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:46] org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(360) | Using DataSource [{
+	CreateTime:"2017-04-28 16:12:44",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1788499647, ConnectTime:"2017-04-28 16:12:45", UseCount:2, LastActiveTime:"2017-04-28 16:12:45"}
+	]
+}
+
+[
+	{
+	ID:1788499647, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:46] org.springframework.context.support.AbstractApplicationContext.doClose(862) | Closing org.springframework.context.support.GenericApplicationContext@53354a57: startup date [Fri Apr 28 16:12:43 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:12:46] com.alibaba.druid.pool.DruidDataSource.close(1385) | {dataSource-1} closed
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:27] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(256) | Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:27] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(182) | Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4adde028, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2ca7887e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2af21f19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7dd7b855, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5d8714fe]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:27] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:28] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:28] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing org.springframework.context.support.GenericApplicationContext@5f677970: startup date [Fri Apr 28 16:17:28 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:28] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [config.properties]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:28] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:28] com.alibaba.druid.pool.DruidDataSource.init(669) | {dataSource-1} inited
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:29] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(66) | HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:29] org.hibernate.Version.logVersion(54) | HHH000412: Hibernate Core {4.3.8.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:29] org.hibernate.cfg.Environment.<clinit>(239) | HHH000206: hibernate.properties not found
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:29] org.hibernate.cfg.Environment.buildBytecodeProvider(346) | HHH000021: Bytecode provider name : javassist
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:30] org.hibernate.dialect.Dialect.<init>(145) | HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:30] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(62) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:30] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(47) | HHH000397: Using ASTQueryTranslatorFactory
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(207) | HHH000228: Running hbm2ddl schema update
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(218) | HHH000102: Fetching database metadata
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(230) | HHH000396: Updating schema
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(267) | HHH000232: Schema update complete
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:30] org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(360) | Using DataSource [{
+	CreateTime:"2017-04-28 16:17:28",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1140890866, ConnectTime:"2017-04-28 16:17:29", UseCount:2, LastActiveTime:"2017-04-28 16:17:30"}
+	]
+}
+
+[
+	{
+	ID:1140890866, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:31] org.springframework.context.support.AbstractApplicationContext.doClose(862) | Closing org.springframework.context.support.GenericApplicationContext@5f677970: startup date [Fri Apr 28 16:17:28 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:17:31] com.alibaba.druid.pool.DruidDataSource.close(1385) | {dataSource-1} closed
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:39] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(256) | Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:39] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(182) | Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@588e2e94, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5e9423f7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4fc55da3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2686a13f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@50c442db]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:39] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:39] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:39] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing org.springframework.context.support.GenericApplicationContext@53354a57: startup date [Fri Apr 28 16:19:39 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:39] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [config.properties]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:39] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:40] com.alibaba.druid.pool.DruidDataSource.init(669) | {dataSource-1} inited
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:40] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(66) | HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:40] org.hibernate.Version.logVersion(54) | HHH000412: Hibernate Core {4.3.8.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:40] org.hibernate.cfg.Environment.<clinit>(239) | HHH000206: hibernate.properties not found
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:40] org.hibernate.cfg.Environment.buildBytecodeProvider(346) | HHH000021: Bytecode provider name : javassist
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:41] org.hibernate.dialect.Dialect.<init>(145) | HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:41] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(62) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:41] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(47) | HHH000397: Using ASTQueryTranslatorFactory
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:41] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(207) | HHH000228: Running hbm2ddl schema update
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:41] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(218) | HHH000102: Fetching database metadata
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:41] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(230) | HHH000396: Updating schema
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:41] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(267) | HHH000232: Schema update complete
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:42] org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(360) | Using DataSource [{
+	CreateTime:"2017-04-28 16:19:39",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1887808902, ConnectTime:"2017-04-28 16:19:41", UseCount:2, LastActiveTime:"2017-04-28 16:19:41"}
+	]
+}
+
+[
+	{
+	ID:1887808902, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:42] org.springframework.context.support.AbstractApplicationContext.doClose(862) | Closing org.springframework.context.support.GenericApplicationContext@53354a57: startup date [Fri Apr 28 16:19:39 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:19:42] com.alibaba.druid.pool.DruidDataSource.close(1385) | {dataSource-1} closed
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:46] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(256) | Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:46] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(182) | Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5e9423f7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4fc55da3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2686a13f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@50c442db, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@501614a]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:46] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:46] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:46] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing org.springframework.context.support.GenericApplicationContext@4fa3c06e: startup date [Fri Apr 28 16:20:46 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:46] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [config.properties]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:46] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:47] com.alibaba.druid.pool.DruidDataSource.init(669) | {dataSource-1} inited
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:47] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(66) | HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:47] org.hibernate.Version.logVersion(54) | HHH000412: Hibernate Core {4.3.8.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:47] org.hibernate.cfg.Environment.<clinit>(239) | HHH000206: hibernate.properties not found
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:47] org.hibernate.cfg.Environment.buildBytecodeProvider(346) | HHH000021: Bytecode provider name : javassist
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:47] org.hibernate.dialect.Dialect.<init>(145) | HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:47] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(62) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:47] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(47) | HHH000397: Using ASTQueryTranslatorFactory
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:48] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(207) | HHH000228: Running hbm2ddl schema update
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:48] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(218) | HHH000102: Fetching database metadata
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:48] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(230) | HHH000396: Updating schema
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:48] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(267) | HHH000232: Schema update complete
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:48] org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(360) | Using DataSource [{
+	CreateTime:"2017-04-28 16:20:46",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1480815136, ConnectTime:"2017-04-28 16:20:47", UseCount:2, LastActiveTime:"2017-04-28 16:20:48"}
+	]
+}
+
+[
+	{
+	ID:1480815136, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:48] org.springframework.context.support.AbstractApplicationContext.doClose(862) | Closing org.springframework.context.support.GenericApplicationContext@4fa3c06e: startup date [Fri Apr 28 16:20:46 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:20:48] com.alibaba.druid.pool.DruidDataSource.close(1385) | {dataSource-1} closed
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:18] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(256) | Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:18] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(182) | Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@588e2e94, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5e9423f7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4fc55da3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2686a13f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@50c442db]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:18] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:18] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:19] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing org.springframework.context.support.GenericApplicationContext@53354a57: startup date [Fri Apr 28 16:22:19 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:19] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [config.properties]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:19] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:19] com.alibaba.druid.pool.DruidDataSource.init(669) | {dataSource-1} inited
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:19] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(66) | HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:19] org.hibernate.Version.logVersion(54) | HHH000412: Hibernate Core {4.3.8.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:19] org.hibernate.cfg.Environment.<clinit>(239) | HHH000206: hibernate.properties not found
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:19] org.hibernate.cfg.Environment.buildBytecodeProvider(346) | HHH000021: Bytecode provider name : javassist
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:20] org.hibernate.dialect.Dialect.<init>(145) | HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:20] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(62) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:20] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(47) | HHH000397: Using ASTQueryTranslatorFactory
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:21] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(207) | HHH000228: Running hbm2ddl schema update
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:21] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(218) | HHH000102: Fetching database metadata
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:21] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(230) | HHH000396: Updating schema
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:21] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(66) | HHH000261: Table found: db_ssm.user_info
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:21] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(67) | HHH000037: Columns: [id, name, age, telephone]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:21] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(69) | HHH000108: Foreign keys: []
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:21] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(70) | HHH000126: Indexes: [primary]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:21] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(267) | HHH000232: Schema update complete
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:21] org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(360) | Using DataSource [{
+	CreateTime:"2017-04-28 16:22:19",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:637125096, ConnectTime:"2017-04-28 16:22:20", UseCount:2, LastActiveTime:"2017-04-28 16:22:21"}
+	]
+}
+
+[
+	{
+	ID:637125096, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:22] org.springframework.context.support.AbstractApplicationContext.doClose(862) | Closing org.springframework.context.support.GenericApplicationContext@53354a57: startup date [Fri Apr 28 16:22:19 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:22:22] com.alibaba.druid.pool.DruidDataSource.close(1385) | {dataSource-1} closed
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:27] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:27] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Apr 28 16:37:27 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:27] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:27] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:28] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [config.properties]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:28] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:28] com.alibaba.druid.pool.DruidDataSource.init(669) | {dataSource-1} inited
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:28] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(66) | HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:28] org.hibernate.Version.logVersion(54) | HHH000412: Hibernate Core {4.3.8.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:28] org.hibernate.cfg.Environment.<clinit>(239) | HHH000206: hibernate.properties not found
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:28] org.hibernate.cfg.Environment.buildBytecodeProvider(346) | HHH000021: Bytecode provider name : javassist
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:29] org.hibernate.dialect.Dialect.<init>(145) | HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:29] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(62) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:29] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(47) | HHH000397: Using ASTQueryTranslatorFactory
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(207) | HHH000228: Running hbm2ddl schema update
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(218) | HHH000102: Fetching database metadata
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(230) | HHH000396: Updating schema
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(66) | HHH000261: Table found: db_ssm.user_info
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(67) | HHH000037: Columns: [id, name, age, telephone]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(69) | HHH000108: Foreign keys: []
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(70) | HHH000126: Indexes: [primary]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(267) | HHH000232: Schema update complete
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(360) | Using DataSource [{
+	CreateTime:"2017-04-28 16:37:28",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1664741118, ConnectTime:"2017-04-28 16:37:29", UseCount:2, LastActiveTime:"2017-04-28 16:37:30"}
+	]
+}
+
+[
+	{
+	ID:1664741118, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:30] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 3256 ms
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Parsing configuration file [struts-default.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Parsing configuration file [struts-plugin.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Parsing configuration file [struts.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (spring) for (com.opensymphony.xwork2.ObjectFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.ActionFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.ResultFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.ConverterFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.InterceptorFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.ValidatorFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.UnknownHandlerFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.FileManagerFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.CollectionConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.ArrayConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.DateConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.NumberConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.StringConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionPropertiesProcessor)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionFileProcessor)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionAnnotationProcessor)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterCreator)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterHolder)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.LocaleProvider)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.TextParser)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.dispatcher.DispatcherErrorHandler)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.security.ExcludedPatternsChecker)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.security.AcceptedPatternsChecker)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Initializing Struts-Spring integration...
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Setting autowire strategy to name
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:37:31] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | ... initialized Struts-Spring integration successfully
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:38:11] com.mssh2.action.UserinfoAction.execute(74) | 查询所有用户
+[spring_struts2_Hibernate_demo][ERROR] [2017-04-28 16:38:11] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.error(42) | Could not find action or result
+/ssh2-maven/user/userinfo.action
+No result defined for action com.mssh2.action.UserinfoAction and result success
+	at com.opensymphony.xwork2.DefaultActionInvocation.executeResult(DefaultActionInvocation.java:371)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:273)
+	at org.apache.struts2.interceptor.DeprecationInterceptor.intercept(DeprecationInterceptor.java:41)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:256)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:167)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:265)
+	at org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:76)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:138)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:191)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.MultiselectInterceptor.intercept(MultiselectInterceptor.java:73)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.DateTextFieldInterceptor.intercept(DateTextFieldInterceptor.java:125)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:91)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:253)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:100)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:141)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:145)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:171)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:139)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:193)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:189)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:54)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:564)
+	at org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:81)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:99)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:326)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:39:38] com.mssh2.action.UserinfoAction.execute(74) | 查询所有用户
+[spring_struts2_Hibernate_demo][ERROR] [2017-04-28 16:39:38] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.error(42) | Could not find action or result
+/ssh2-maven/user/userinfo.action
+No result defined for action com.mssh2.action.UserinfoAction and result success
+	at com.opensymphony.xwork2.DefaultActionInvocation.executeResult(DefaultActionInvocation.java:371)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:273)
+	at org.apache.struts2.interceptor.DeprecationInterceptor.intercept(DeprecationInterceptor.java:41)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:256)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:167)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:265)
+	at org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:76)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:138)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:191)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.MultiselectInterceptor.intercept(MultiselectInterceptor.java:73)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.DateTextFieldInterceptor.intercept(DateTextFieldInterceptor.java:125)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:91)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:253)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:100)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:141)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:145)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:171)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:139)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:193)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:189)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:54)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:564)
+	at org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:81)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:99)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:326)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:42:12] com.mssh2.action.UserinfoAction.execute(74) | 查询所有用户
+[spring_struts2_Hibernate_demo][ERROR] [2017-04-28 16:42:12] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.error(42) | Could not find action or result
+/ssh2-maven/user/userinfo.action
+No result defined for action com.mssh2.action.UserinfoAction and result success
+	at com.opensymphony.xwork2.DefaultActionInvocation.executeResult(DefaultActionInvocation.java:371)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:273)
+	at org.apache.struts2.interceptor.DeprecationInterceptor.intercept(DeprecationInterceptor.java:41)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:256)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:167)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:265)
+	at org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:76)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:138)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:191)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.MultiselectInterceptor.intercept(MultiselectInterceptor.java:73)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.DateTextFieldInterceptor.intercept(DateTextFieldInterceptor.java:125)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:91)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:253)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:100)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:141)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:145)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:171)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:139)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:193)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:189)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:54)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:564)
+	at org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:81)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:99)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:326)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:42:57] com.mssh2.action.UserinfoAction.execute(74) | 查询所有用户
+[spring_struts2_Hibernate_demo][ERROR] [2017-04-28 16:43:08] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.error(42) | Could not find action or result
+/ssh2-maven/user/userinfo.action
+No result defined for action com.mssh2.action.UserinfoAction and result success
+	at com.opensymphony.xwork2.DefaultActionInvocation.executeResult(DefaultActionInvocation.java:371)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:273)
+	at org.apache.struts2.interceptor.DeprecationInterceptor.intercept(DeprecationInterceptor.java:41)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:256)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:167)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:265)
+	at org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:76)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:138)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:191)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.MultiselectInterceptor.intercept(MultiselectInterceptor.java:73)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.DateTextFieldInterceptor.intercept(DateTextFieldInterceptor.java:125)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:91)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:253)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:100)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:141)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:145)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:171)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:139)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:193)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:189)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:54)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:564)
+	at org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:81)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:99)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:326)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:43:42] com.mssh2.action.UserinfoAction.detail(82) | 查看用户详情：1
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:46:20] com.mssh2.action.UserinfoAction.execute(74) | 查询所有用户
+[spring_struts2_Hibernate_demo][ERROR] [2017-04-28 16:46:20] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.error(42) | Could not find action or result
+/ssh2-maven/user/userinfo.action
+No result defined for action com.mssh2.action.UserinfoAction and result success
+	at com.opensymphony.xwork2.DefaultActionInvocation.executeResult(DefaultActionInvocation.java:371)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:273)
+	at org.apache.struts2.interceptor.DeprecationInterceptor.intercept(DeprecationInterceptor.java:41)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:256)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:167)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:265)
+	at org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:76)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:138)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:229)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:191)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.MultiselectInterceptor.intercept(MultiselectInterceptor.java:73)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.DateTextFieldInterceptor.intercept(DateTextFieldInterceptor.java:125)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:91)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:253)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:100)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:141)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:145)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:171)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:139)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:193)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:189)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:244)
+	at org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:54)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:564)
+	at org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:81)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:99)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:326)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:47:07] com.mssh2.action.UserinfoAction.execute(74) | 查询所有用户
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:47:10] com.mssh2.action.UserinfoAction.detail(82) | 查看用户详情：1
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:47:48] com.mssh2.action.UserinfoAction.execute(74) | 查询所有用户
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:01] org.springframework.context.support.AbstractApplicationContext.doClose(862) | Closing Root WebApplicationContext: startup date [Fri Apr 28 16:37:27 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:01] com.alibaba.druid.pool.DruidDataSource.close(1385) | {dataSource-1} closed
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:02] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:02] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Apr 28 16:51:02 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:02] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:02] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:02] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [config.properties]
+[spring_struts2_Hibernate_demo][WARN] [2017-04-28 16:51:02] org.springframework.context.support.AbstractApplicationContext.refresh(487) | Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanInitializationException: Could not load properties; nested exception is java.io.FileNotFoundException: class path resource [config.properties] cannot be opened because it does not exist
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:151)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:265)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.scanner.RJRFileChangeListener.filesChanged(RJRFileChangeListener.java:152)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:486)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:352)
+	at org.mortbay.util.Scanner.scan(Scanner.java:280)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:232)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.io.FileNotFoundException: class path resource [config.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:143)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:98)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:175)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.mergeProperties(PropertiesLoaderSupport.java:156)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:142)
+	... 20 more
+[spring_struts2_Hibernate_demo][ERROR] [2017-04-28 16:51:02] org.springframework.web.context.ContextLoader.initWebApplicationContext(331) | Context initialization failed
+org.springframework.beans.factory.BeanInitializationException: Could not load properties; nested exception is java.io.FileNotFoundException: class path resource [config.properties] cannot be opened because it does not exist
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:151)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:265)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.scanner.RJRFileChangeListener.filesChanged(RJRFileChangeListener.java:152)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:486)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:352)
+	at org.mortbay.util.Scanner.scan(Scanner.java:280)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:232)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.io.FileNotFoundException: class path resource [config.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:143)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:98)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:175)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.mergeProperties(PropertiesLoaderSupport.java:156)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:142)
+	... 20 more
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:41] org.springframework.web.context.ContextLoader.initWebApplicationContext(285) | Root WebApplicationContext: initialization started
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:41] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(510) | Refreshing Root WebApplicationContext: startup date [Fri Apr 28 16:51:41 CST 2017]; root of context hierarchy
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:41] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:41] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(317) | Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:42] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(172) | Loading properties file from class path resource [jdbc.properties]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:42] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(153) | JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:42] com.alibaba.druid.pool.DruidDataSource.init(669) | {dataSource-1} inited
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:43] org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(66) | HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:43] org.hibernate.Version.logVersion(54) | HHH000412: Hibernate Core {4.3.8.Final}
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:43] org.hibernate.cfg.Environment.<clinit>(239) | HHH000206: hibernate.properties not found
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:43] org.hibernate.cfg.Environment.buildBytecodeProvider(346) | HHH000021: Bytecode provider name : javassist
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:43] org.hibernate.dialect.Dialect.<init>(145) | HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:43] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(62) | HHH000399: Using default transaction strategy (direct JDBC transactions)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:43] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(47) | HHH000397: Using ASTQueryTranslatorFactory
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(207) | HHH000228: Running hbm2ddl schema update
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(218) | HHH000102: Fetching database metadata
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(230) | HHH000396: Updating schema
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(66) | HHH000261: Table found: db_ssm.user_info
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(67) | HHH000037: Columns: [id, name, age, telephone]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(69) | HHH000108: Foreign keys: []
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.hibernate.tool.hbm2ddl.TableMetadata.<init>(70) | HHH000126: Indexes: [primary]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(267) | HHH000232: Schema update complete
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(360) | Using DataSource [{
+	CreateTime:"2017-04-28 16:51:42",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1658872531, ConnectTime:"2017-04-28 16:51:43", UseCount:2, LastActiveTime:"2017-04-28 16:51:44"}
+	]
+}
+
+[
+	{
+	ID:1658872531, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:44] org.springframework.web.context.ContextLoader.initWebApplicationContext(325) | Root WebApplicationContext: initialization completed in 3239 ms
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Parsing configuration file [struts-default.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Parsing configuration file [struts-plugin.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Parsing configuration file [struts.xml]
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (spring) for (com.opensymphony.xwork2.ObjectFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.ActionFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.ResultFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.ConverterFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.InterceptorFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.ValidatorFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.factory.UnknownHandlerFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.FileManagerFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.CollectionConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.ArrayConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.DateConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.NumberConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.StringConverter)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionPropertiesProcessor)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionFileProcessor)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionAnnotationProcessor)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterCreator)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterHolder)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.LocaleProvider)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.util.TextParser)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (org.apache.struts2.dispatcher.DispatcherErrorHandler)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.security.ExcludedPatternsChecker)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Choosing bean (struts) for (com.opensymphony.xwork2.security.AcceptedPatternsChecker)
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Initializing Struts-Spring integration...
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | Setting autowire strategy to name
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:45] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(46) | ... initialized Struts-Spring integration successfully
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:51] com.mssh2.action.UserinfoAction.execute(74) | 查询所有用户
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:51:55] com.mssh2.action.UserinfoAction.detail(82) | 查看用户详情：1
+[spring_struts2_Hibernate_demo][INFO] [2017-04-28 16:56:45] com.mssh2.action.UserinfoAction.detail(82) | 查看用户详情：1
